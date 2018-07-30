@@ -3,25 +3,25 @@ function bubbleSort(array) {
         return array;
     }
 
+    let checkIndexes = array.length - 1
+
     for (let i = 0; i < array.length; i++) {
-        var bigger; 
-        var smaller;
-        for (let j = 0; j < array.length; j++) {
-            if (array[j] > array[j+1]) {
-                bigger = array[j]
-                smaller = array[j+1]
-                array[j] = smaller;
-                array[j+1] = bigger;
-            }
+
+        for (let j = 0; j < checkIndexes; j++) {
+          swap(array, j);
         }
+        checkIndexes--;
     }
     return array;
 }
 
-// function swap(num1, num2) {
-//     const first = num1;
-//     const second = num2;
-//     if (first > second) {
-//         num1 = second;
-//     }
-// }
+function swap(array, index) {
+  var bigger;
+  var smaller;
+  if (array[index] > array[index+1]) {
+    bigger = array[index]
+    smaller = array[index+1]
+    array[index] = smaller;
+    array[index+1] = bigger;
+  }
+}
